@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { shade } from 'polished';
 
+// eslint-disable-next-line import/prefer-default-export
 export const ContainerTable = styled.div`
   display: flex;
   align-items: center;

@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-shadow
 export enum ActionTypes {
   addProductToCartRegister = 'REGISTER_USER_ADD',
   addProductToCartEdit = 'REGISTER_USER_EDIT',
@@ -9,7 +10,7 @@ export interface IUserProps {
   name: string;
   email: string;
   password: string;
-  dateOfBirth: string
+  dateOfBirth: string;
   userType: string;
 }
 

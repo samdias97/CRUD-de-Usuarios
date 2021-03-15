@@ -1,4 +1,3 @@
-/* eslint-disable jsx-a11y/control-has-associated-label */
 import React, { useCallback, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { AiOutlineEdit, AiOutlineDelete } from 'react-icons/ai';
@@ -11,18 +10,26 @@ import ModalEditUser from '../ModalEditUser';
 const TableListUsers: React.FC = () => {
   const dispatch = useDispatch();
 
-  const listUsers = useSelector<IState, IUser[]>((stateTemp) => stateTemp.cart.users);
+  const listUsers = useSelector<IState, IUser[]>(
+    stateTemp => stateTemp.cart.users,
+  );
   const [editUser, setEditUser] = useState(false);
   const [dataUserEdit, setDataUserEdit] = useState<IUserProps>();
 
-  const handleDeleteUser = useCallback((idUser: string) => {
-    dispatch(addProductToCartDelete(idUser));
-  }, [dispatch]);
+  const handleDeleteUser = useCallback(
+    (idUser: string) => {
+      dispatch(addProductToCartDelete(idUser));
+    },
+    [dispatch],
+  );
 
   return (
     <>
       {editUser && dataUserEdit && (
-        <ModalEditUser onClose={() => setEditUser(false)} dadosUser={dataUserEdit} />
+        <ModalEditUser
+          onClose={() => setEditUser(false)}
+          dadosUser={dataUserEdit}
+        />
       )}
       <ContainerTable>
         <table>
@@ -39,15 +46,34 @@ const TableListUsers: React.FC = () => {
           </thead>
 
           <tbody>
-            {listUsers.map((item) => (
+            {listUsers.map(item => (
               <tr key={item.user.id}>
                 <td>{item.user.id}</td>
                 <td>{item.user.name}</td>
                 <td>{item.user.email}</td>
                 <td>{item.user.dateOfBirth}</td>
                 <td>{item.user.userType}</td>
-                <td><button type="button" id="btnEdit"><AiOutlineEdit size={20} onClick={() => { setDataUserEdit(item.user); setEditUser(true); }} /></button></td>
-                <td><button type="button" id="btnDelete"><AiOutlineDelete size={20} onClick={() => handleDeleteUser(item.user.id)} /></button></td>
+                <td>
+                  <button
+                    type="button"
+                    id="btnEdit"
+                    onClick={() => {
+                      setDataUserEdit(item.user);
+                      setEditUser(true);
+                    }}
+                  >
+                    <AiOutlineEdit size={20} />
+                  </button>
+                </td>
+                <td>
+                  <button
+                    type="button"
+                    id="btnDelete"
+                    onClick={() => handleDeleteUser(item.user.id)}
+                  >
+                    <AiOutlineDelete size={20} />
+                  </button>
+                </td>
               </tr>
             ))}
           </tbody>

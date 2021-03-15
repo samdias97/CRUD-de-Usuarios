@@ -12,17 +12,12 @@ const Header: React.FC = () => {
       </Title>
 
       <ContainerButton>
-        <button
-          type="button"
-          onClick={() => setRegister(true)}
-        >
+        <button type="button" onClick={() => setRegister(true)}>
           Cadastrar
         </button>
       </ContainerButton>
 
-      {register && (
-        <ModalReisterUser onClose={() => setRegister(false)} />
-      )}
+      {register && <ModalReisterUser onClose={() => setRegister(false)} />}
     </>
   );
 };

@@ -40,44 +40,44 @@ export const Container = styled.div`
 `;
 
 export const ContainerHeader = styled.div`
-display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: center;
-font-family: Arial, Helvetica, sans-serif;
-
-div {
   display: flex;
-  width: 90%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: Arial, Helvetica, sans-serif;
 
-  input {
-    width: 100%;
-    height: 30px;
-    border-radius: 5px;
-    border: 2px solid #006600;
-    outline: none;
-    background: #f2f2f2;
-    & + input {
+  div {
+    display: flex;
+    width: 90%;
+
+    input {
+      width: 100%;
+      height: 30px;
+      border-radius: 5px;
+      border: 2px solid #006600;
+      outline: none;
+      background: #f2f2f2;
+      & + input {
+        margin-left: 5px;
+      }
+    }
+    select {
+      width: 103%;
+      height: 37px;
+      border-radius: 5px;
+      border: 2px solid #006600;
+      outline: none;
+      background: #f2f2f2;
       margin-left: 5px;
     }
-  }
-  select {
-    width: 103%;
-    height: 37px;
-    border-radius: 5px;
-    border: 2px solid #006600;
-    outline: none;
-    background: #f2f2f2;
-    margin-left: 5px;
-  }
-  span {
-    color: red;
-  }
+    span {
+      color: red;
+    }
 
-  & + div {
-    margin-top: 15px;
+    & + div {
+      margin-top: 15px;
+    }
   }
-}
 `;
 
 export const ContainerHeaderDados = styled.div`

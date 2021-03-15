@@ -1,4 +1,3 @@
-/* eslint-disable no-use-before-define */
 import React from 'react';
 import { Provider } from 'react-redux';
 import TableListUsers from './components/TableListUsers';
@@ -11,7 +10,6 @@ function App(): JSX.Element {
       <Header />
       <TableListUsers />
     </Provider>
-
   );
 }
 

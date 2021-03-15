@@ -38,7 +38,7 @@ export const ContainerButton = styled.div`
     transition: background 0.2s;
 
     &:hover {
-      background: ${shade(0.2, '#00994d')}
+      background: ${shade(0.2, '#00994d')};
     }
   }
 `;
